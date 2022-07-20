@@ -11,7 +11,7 @@ public class TaskChainListener implements Listener {
     private final TaskChainFactory factory;
 
     @EventHandler
-    public void onServerClose(PluginDisableEvent event) {
+    public void onPluginDisable(PluginDisableEvent event) {
         if (event.getPlugin().getName().equals(factory.getInstance().getName())) {
             factory.getScheduler().shutdownNow();
         }

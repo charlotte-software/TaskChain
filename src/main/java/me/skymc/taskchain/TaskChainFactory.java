@@ -18,10 +18,10 @@ public class TaskChainFactory {
 
     public TaskChainFactory(JavaPlugin plugin) {
         this.instance = plugin;
-        Bukkit.getPluginManager().registerEvents(new TaskChainListener(this), getInstance());
+        Bukkit.getPluginManager().registerEvents(new TaskChainListener(this), instance);
     }
 
     public TaskChain newChain() {
-        return new TaskChain(getInstance(), getScheduler(), new LinkedBlockingQueue<>());
+        return new TaskChain(instance, scheduler, new LinkedBlockingQueue<>());
     }
 }

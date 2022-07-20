@@ -18,8 +18,10 @@ import java.util.concurrent.TimeUnit;
 @AllArgsConstructor
 public class TaskChain {
 
+    @Getter
     JavaPlugin instance;
 
+    @Getter
     ScheduledExecutorService scheduler;
 
     @Getter

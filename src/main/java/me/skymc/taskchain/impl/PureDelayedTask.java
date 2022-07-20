@@ -18,7 +18,7 @@ public class PureDelayedTask implements ITask {
     private long delay;
 
     @Override
-    public boolean async() {
+    public boolean isSync() {
         return true;
     }
 

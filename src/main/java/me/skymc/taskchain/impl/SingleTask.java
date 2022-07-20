@@ -15,14 +15,13 @@ public class SingleTask implements ITask {
 
     private JavaPlugin instance;
 
+    private boolean async;
+
     @Getter
     private Runnable runnable;
 
-    @Getter
-    private boolean async;
-
     @Override
-    public boolean async() {
+    public boolean isSync() {
         return async;
     }
 

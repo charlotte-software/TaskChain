@@ -7,7 +7,7 @@ import java.util.concurrent.CompletableFuture;
 
 public interface ITask {
 
-    boolean async();
+    boolean isSync();
 
     JavaPlugin getInstance();
 

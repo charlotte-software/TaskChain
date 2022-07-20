@@ -17,6 +17,8 @@ public class RepeatedTask implements ITask {
 
     private JavaPlugin instance;
 
+    private boolean async;
+
     @Getter
     private Runnable runnable;
 
@@ -26,11 +28,8 @@ public class RepeatedTask implements ITask {
     @Getter
     private long period;
 
-    @Getter
-    private boolean async;
-
     @Override
-    public boolean async() {
+    public boolean isSync() {
         return async;
     }
 

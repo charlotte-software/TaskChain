@@ -49,25 +49,25 @@ public class TaskChain {
 
     @NotNull
     public TaskChain task(@NotNull Runnable runnable) {
-        tasks.add(new SingleTask(instance, runnable, false));
+        tasks.add(new SingleTask(instance, false, runnable));
         return this;
     }
 
     @NotNull
     public TaskChain task(@NotNull Runnable runnable, boolean async) {
-        tasks.add(new SingleTask(instance, runnable, async));
+        tasks.add(new SingleTask(instance, async, runnable));
         return this;
     }
 
     @NotNull
     public TaskChain repeatedTask(@NotNull Runnable runnable, @NotNull Callable<Boolean> predicate, long period) {
-        tasks.add(new RepeatedTask(instance, runnable, predicate, period, false));
+        tasks.add(new RepeatedTask(instance, false, runnable, predicate, period));
         return this;
     }
 
     @NotNull
     public TaskChain repeatedTask(@NotNull Runnable runnable, @NotNull Callable<Boolean> predicate, long period, boolean async) {
-        tasks.add(new RepeatedTask(instance, runnable, predicate, period, async));
+        tasks.add(new RepeatedTask(instance, async, runnable, predicate, period));
         return this;
     }
 
